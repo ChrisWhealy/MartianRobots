@@ -36,7 +36,7 @@ class Robot {
 }
 
 // *********************************************************************************************************************
-// Rotation on the stop
+// On the spot rotation by 90 degrees
 const headingsRight = ["N", "E", "S", "W"]
 const headingsLeft  = ["N", "W", "S", "E"]
 
