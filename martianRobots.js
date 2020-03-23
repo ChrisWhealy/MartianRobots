@@ -169,7 +169,7 @@ process.stdin.on('data', stdIn => {
         trace(`World dimensions = [${width},${height}]`)
       }
       else {
-        let instructionSet = lineData
+        let instructionSet = lineData.toUpperCase()
         trace(`Instruction set = ${instructionSet}`)
 
         // Move robot according to instruction set
