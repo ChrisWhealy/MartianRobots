@@ -28,9 +28,9 @@ E.G. `1 1 E` places a new robot at `(1,1)` facing east
 
 The next line is a simple set of commands consisting of:
 
-* `F`: Move one position forwardalong the current heading
-* `L`: Rotate left on the spot
-* `R`: Rotate right on the spot
+* `F`: Move one position forward along the current heading
+* `L`: Rotate left 90&deg; on the spot
+* `R`: Rotate right 90&deg; on the spot
 
 After obeying a sequence of instructions, the robot reports its new position to standard out.  So for an input of
 
@@ -40,11 +40,11 @@ After obeying a sequence of instructions, the robot reports its new position to 
 RFRFRFRF
 ```
 
-A 5 x 3 world is created with a robot at `(1,1)` facing east.  This robot rotates right and moves forward one position.  This is repeated 3 times and results in the robot being back where it started.  So it it reports its position as
+A 5 x 3 world is created with a robot at `(1,1)` facing east.  This robot then rotates right and moves forward one position.  This is repeated 3 further times and results in the robot being back where it started.  Its position is then reported as:
 
 `1 1 E`
 
-Assuming the following input continues directly from that shown above
+Continuing the above input:
 
 ```
 3 2 N
@@ -53,5 +53,5 @@ FRRFLLFFRRFLL
 
 Would generate `3 3 N LOST` because to move north from location `(3,3)` causes the robot to drop off the edge of the world.  (And as we know, here be monsters...)
 
-Robots only know that a move is dangerous is a previous robot died by performing the same move.  Such events should be recorded so that other robots can ignore that instruction and stay alive.
+Robots only know that a move is dangerous if a previous robot died by performing the same move.  Such events should be recorded so that other robots can ignore that instruction and stay alive.
 
