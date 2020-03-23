@@ -98,13 +98,15 @@ const move =
       }
       else {
         // Yikes - Here be dragons!
-        trace(`Ignoring instruction to move to (${newX}, ${newY}) due to certain death`)
         currentLoc.hereBeDragons += robot.heading
         robot.isLost = true
       }
     }
+    else {
+      trace(`Ignoring instruction to move to (${newX}, ${newY}) due to certain death`)
+    }
 
-    trace(`Moved to location (${robot.x}, ${robot.y})`)
+    trace(`Location after move is (${robot.x}, ${robot.y})`)
     return robot
   }
 
@@ -234,6 +236,7 @@ process.stdin.on('data', stdIn => {
   }
 })
 
+// KTHXBAI
 process.stdin.on('end', _ => trace("\n"))
 
 
