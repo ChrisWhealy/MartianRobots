@@ -8,19 +8,27 @@ Assumptions:
 * No two robots can occupy the same grid location
 * A robot's starting position cannot be outside the grid
 
-The program is driven by commands received from standard in.  For example:
+## Execution
 
-```
-5 3
-1 1 E
-RFRFRFRF
-3 2 N
-FRRFLLFFRRFLL
-0 3 W
-LLFFFLFLFL
-```
+It is assumed you already have NodeJS installed.
 
-The first line is the grid dimensions (width x height): `5 3`
+1. Clone this repo into some local directory
+1. Execute the program using the command `node martianRobots.js`
+1. The program is driven by commands received from standard in.  For example:
+
+    ```
+    5 3
+    1 1 E
+    RFRFRFRF
+    3 2 N
+    FRRFLLFFRRFLL
+    0 3 W
+    LLFFFLFLFL
+    ```
+
+## Command Format
+
+The first line of the commnds shown above is the grid dimensions (width x height): `5 3`
 
 Followed by `n: n > 0` pairs of lines where the first line defines the location of a new robot and its heading.
 
