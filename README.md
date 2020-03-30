@@ -1,16 +1,17 @@
 # Martian Robots
 
-A small JavaScript program that moves a series of robots around a grid.
+A small text-based application that moves a series of robots around a grid.
 
 Assumptions:
 
-* The grid is not toroidal, but has edges. Thus robots can be lost if they move off the grid
+* The grid is not toroidal, but is flat and therefore has edges. Thus robots can be lost if they move off the edge of the grid
+* If a robot become lost by moving off the grid, it must report its last known position and heading followed by the word `LOST`
 * No two robots can occupy the same grid location
 * A robot's starting position cannot be outside the grid
 
 ## Execution
 
-It is assumed you already have NodeJS installed.
+This application is written in JavaScript and in order to run it, you must have NodeJS installed.  If this is not the case, please follow the instructions [here](https://nodejs.org/en/download/)
 
 1. Clone this repo into some local directory
 1. Execute the program using the command `node martianRobots.js`
@@ -59,7 +60,8 @@ Continuing the above input:
 FRRFLLFFRRFLL
 ```
 
-Would generate `3 3 N LOST` because to move north from location `(3,3)` causes the robot to drop off the edge of the world.  (And as we know, here be monsters...)
+Would generate `3 3 N LOST`.  The above instructions will bring the robot to `(3,3)` at which point it will attempt to move north and consequently drop off the edge of the world - and as we know, here be monsters...
+
+The robot is now lost, and prints its last known location and heading followed by the word `LOST`, hence `3 3 N LOST`.
 
 Robots only know that a move is dangerous if a previous robot died by performing the same move.  Such events should be recorded so that other robots can ignore that instruction and stay alive.
-
